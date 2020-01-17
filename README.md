@@ -4,7 +4,6 @@
 ### Copyright (c) 2020 Aalto University. All rights reserved.
 
 The layout engine implements the MILP optimiser used by GRIDS. It is implemented in Python, and uses the Gurobi optimiser.
-For the latest version and further documentation, please visit: https://userinterfaces.aalto.fi/grids
 
 ## Requirements
 1. Python 3.0
