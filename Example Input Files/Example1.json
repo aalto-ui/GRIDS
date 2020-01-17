@@ -1,0 +1,110 @@
+{
+  "layouts" : [
+    {
+      "borderXPadding" : 28,
+      "elementXPadding" : 32,
+      "id" : "originalLayout",
+      "borderYPadding" : 32,
+      "isOptimised" : false,
+      "isEdited" : false,
+      "canvasWidth" : 1080,
+      "userRating" : 0,
+      "canvasHeight" : 1920,
+      "elementYPadding" : 32,
+      "score" : 0,
+      "elements" : [
+        {
+          "id" : "<HeadingImageElement: 0x600003b616c0>",
+          "horizontalPreference" : "None",
+          "verticalPreference" : "Top",
+          "x" : -1,
+          "fillColorGreenValue" : 255,
+          "y" : -1,
+          "isDrawingFill" : 1,
+          "width" : 1015,
+          "type" : "HeadingImageElement",
+          "fillColorBlueValue" : 103,
+          "fillColorRedValue" : 34,
+          "isLocked" : "false",
+          "height" : 140
+        },
+        {
+          "id" : "<ImageElement: 0x600003b5c540>",
+          "horizontalPreference" : "None",
+          "verticalPreference" : "None",
+          "x" : -1,
+          "fillColorGreenValue" : 255,
+          "y" : -1,
+          "isDrawingFill" : 1,
+          "width" : 1016,
+          "type" : "ImageElement",
+          "fillColorBlueValue" : 255,
+          "fillColorRedValue" : 255,
+          "isLocked" : "false",
+          "height" : 549
+        },
+        {
+          "id" : "<FormFieldImageElement: 0x600003bb00e0>",
+          "horizontalPreference" : "None",
+          "verticalPreference" : "None",
+          "x" : -1,
+          "fillColorGreenValue" : 255,
+          "y" : -1,
+          "isDrawingFill" : 1,
+          "width" : 481,
+          "type" : "FormFieldImageElement",
+          "fillColorBlueValue" : 255,
+          "fillColorRedValue" : 255,
+          "isLocked" : "false",
+          "height" : 128
+        },
+        {
+          "id" : "<ParagraphImageElement: 0x600003b61a40>",
+          "horizontalPreference" : "None",
+          "verticalPreference" : "None",
+          "x" : -1,
+          "fillColorGreenValue" : 255,
+          "y" : -1,
+          "isDrawingFill" : 1,
+          "width" : 904,
+          "type" : "ParagraphImageElement",
+          "fillColorBlueValue" : 255,
+          "fillColorRedValue" : 255,
+          "isLocked" : "false",
+          "height" : 623
+        },
+        {
+          "id" : "<HeadingImageElement: 0x600003b55960>",
+          "horizontalPreference" : "None",
+          "verticalPreference" : "Bottom",
+          "x" : -1,
+          "fillColorGreenValue" : 66,
+          "y" : -1,
+          "isDrawingFill" : 1,
+          "width" : 1022,
+          "type" : "HeadingImageElement",
+          "fillColorBlueValue" : 72,
+          "fillColorRedValue" : 68,
+          "isLocked" : "false",
+          "height" : 198
+        },
+        {
+          "id" : "<FormFieldImageElement: 0x600003bb0000>",
+          "horizontalPreference" : "None",
+          "verticalPreference" : "None",
+          "x" : -1,
+          "fillColorGreenValue" : 255,
+          "y" : -1,
+          "isDrawingFill" : 1,
+          "width" : 447,
+          "type" : "FormFieldImageElement",
+          "fillColorBlueValue" : 255,
+          "fillColorRedValue" : 255,
+          "isLocked" : "false",
+          "height" : 128
+        }
+      ],
+      "isSaved" : false
+    }
+  ]
+}
