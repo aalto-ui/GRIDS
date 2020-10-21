@@ -1,14 +1,21 @@
 # Copyright (c) 2020 Aalto University. All rights reserved.
-import sys
+
+import argparse
+
+import model.SolutionManager as SolutionManager
+from execute.FlexiFixPlacement import FlexiFixPlacement
 from tools import JSONLoader
-from execute import FlexiFixPlacement
 
-if(len(sys.argv)<2):
-    print("SYNTAX ERROR: Please launch with JSON file as first argument")
-    exit(-1)
-if(len(sys.argv[1])<6):
-    print("SYNTAX ERROR: Please give full path of JSON file as first argument")
-    exit(-1)
+parser = argparse.ArgumentParser()
+parser.add_argument('input', type=str, help='Please launch with JSON file as first argument')
+parser.add_argument('--draw', action='store_true')
 
-data = JSONLoader.loadJSONFile(sys.argv[1])
-FlexiFixPlacement.solve(data)
+args = parser.parse_args()
+
+data = JSONLoader.load_json_file(args.input)
+SolutionManager.add_solution_handler(SolutionManager.json_handler)
+if args.draw:
+    SolutionManager.add_solution_handler(SolutionManager.plot_handler)
+
+model = FlexiFixPlacement(data)
+model.solve()

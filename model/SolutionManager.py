@@ -1,19 +1,36 @@
-import model.SolutionInstance
-from model.SolutionInstance import *
-from tools.JSonExportUtility import *
+# Copyright (c) 2020 Aalto University. All rights reserved.
 
-hashToSolution = dict()
+from model.SolutionInstance import SolutionInstance
+from tools.JSONExportUtility import save_to_json
+from model.DataInstance import DataInstance
+from tools.PlotUtils import draw_solution
 
-def buildNewSolution(objValue, Lval,Tval, Wval, Hval):
-    solution = SolutionInstance(objValue, Lval,Tval, Wval, Hval)
-    hash = str(Lval)+str(Tval)+ str(Wval)+str(Hval)
-    if hash in hashToSolution:
+hashToSolution = set()
+
+solution_callbacks = []
+
+
+def build_new_solution(data: DataInstance, solNo, objValue, Lval, Tval, Wval, Hval):
+    sol_hash = hash((str(Lval), str(Tval), str(Wval), str(Hval)))  # hash a tuple
+    if sol_hash in hashToSolution:
         print("** Neglecting a repeat solution **")
         return
     else:
-        hashToSolution[hash] = solution
-        useSolution(objValue, Lval,Tval, Wval, Hval)
+        hashToSolution.add(sol_hash)
+
+        solution = SolutionInstance(objValue, Lval, Tval, Wval, Hval, solNo)
+        for cb in solution_callbacks:
+            cb(data, solution)
 
 
-def useSolution(objValue, Lval,Tval, Wval, Hval):
-    SaveToJSon(tools.GurobiUtils.data.N,  tools.GurobiUtils.data.inputFile, tools.GurobiUtils.data.canvasWidth, tools.GurobiUtils.data.canvasHeight, Lval,Tval, Wval, Hval, tools.GurobiUtils.solNo, tools.GurobiUtils.data, objValue)
+def json_handler(data: DataInstance, solution: SolutionInstance):
+    save_to_json(data, solution)
+
+
+def plot_handler(data: DataInstance, solution: SolutionInstance):
+    draw_solution(data, solution)
+
+
+def add_solution_handler(cb):
+    assert callable(cb)
+    solution_callbacks.append(cb)
