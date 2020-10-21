@@ -96,7 +96,10 @@ class FlexiFixPlacement:
             print("*** Found a solution with ObjValue = ", objeValue, " where estimate range = <", lowerBound, " -- ",
                   bestKnownSolution, ">")
             percentGap = (objeValue - lowerBound) / lowerBound
-            qualityMetric = (objeValue - bestKnownSolution) / bestKnownSolution
+            if bestKnownSolution == 0.0:
+                qualityMetric = 0.0
+            else:
+                qualityMetric = (objeValue - bestKnownSolution) / bestKnownSolution
             print("Quality metric at ", qualityMetric)
             printThis = 0
             t = model.cbGet(GRB.Callback.RUNTIME)
