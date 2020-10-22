@@ -11,14 +11,14 @@ from tools.GurobiUtils import define1DIntVarArray, define2DBoolVarArrayArray, de
 from tools.JSONExportUtility import save_to_json
 
 
-def setControlParams(model: Model):
+def setControlParams(model: Model, verbose: bool = True):
     model.Params.PoolSearchMode = 2
     model.Params.PoolSolutions = 1
     model.Params.MIPGap = 0.04
     model.Params.TimeLimit = 30
     # gurobi.Params.MIPGapAbs = 0.97
     model.Params.LogFile = "GurobiLog.txt"
-    model.Params.OutputFlag = 1
+    model.Params.OutputFlag = int(verbose)
 
 
 def defineVars(data: DataInstance):

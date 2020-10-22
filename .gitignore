@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 .idea/
 GurobiLog.txt
-results/*.json
+results/
 FlexiFitModel.lp
 Infeasible.ilp
