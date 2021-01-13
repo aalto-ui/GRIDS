@@ -7,7 +7,7 @@ The layout engine implements the MILP optimiser used by GRIDS. It is implemented
 
 ## Requirements
 1. Python 3.0
-2. Gurobipy (Gurobi Optimiser for Python)\
+2. Gurobipy (Gurobi Optimiser for Python)
 
 ## How to use
 To run the optimiser with an input JSON file (example file included in directory), execute the following command in terminal:
