@@ -24,7 +24,8 @@ def dict_to_datainstance(json_data: dict):
     data.elementXPadding = json_data.get('elementXPadding')
     data.elementYPadding = json_data.get('elementYPadding')
     data.canvasHeight = json_data.get('canvasHeight')
-    data.NumOfSolutions = json_data.get('NumOfSolutions')
+    if json_data.get('NumOfSolutions'): data.NumOfSolutions = json_data.get('NumOfSolutions')
+    else: data.NumOfSolutions = 50 # Default number of solutions
     data.Nearby = json_data.get('Nearby')
     JSONelements = json_data.get('elements')
     data.element_count = len(JSONelements)

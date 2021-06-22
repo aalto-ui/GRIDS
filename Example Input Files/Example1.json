@@ -11,6 +11,7 @@
       "userRating" : 0,
       "canvasHeight" : 1920,
       "elementYPadding" : 32,
+      "NumOfSolutions":10, 
       "score" : 0,
       "elements" : [
         {
